@@ -1,0 +1,13 @@
+.container{
+    width: 800px;
+    margin-left: 0px;
+}
+#cart-contents{
+    text-align: right;
+    margin-right: 150px;
+}
+.title{
+    margin-left: 25px;
+    color: darkslategray;
+    
+}
