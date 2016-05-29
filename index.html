@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <h1 class="title">Vue Skateshop</h1><hr>
+        <div id="app">
+            
+            <div id="cart-contents">
+                 <h3>Items in cart <span class="glyphicon glyphicon-shopping-cart"></span></h3>    
+             
+                <div v-for="item in cart">
+                    <h6>{{item.name}}</h6>
+                </div>
+            </div>
+            <div v-for="item in items">
+                <item :item="item"></item>       
+            </div>
+        </div>
+        <template id="item-template">
+           <div class="container">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-sm-6" >
+                        <img v-img="item.img">
+                    </div>
+                    <div class="col-sm-6" >
+                         <h2>{{item.name}}</h2>
+                         <h5>by: {{item.company}}</h5>
+                         <h5>Price: ${{item.price}}</h5>
+                         <h5>Quantity left: {{item.quantity}}</h5>
+                         <button @click="addToCart(item)" class="btn btn-default">Add to Cart</button> 
+                    </div>
+                </div>
+            </div>
+           </div>
+        </template>
+        
+        https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.24/vue.js
+        <script src="app.js"></script>
+    </body>
+</html>
